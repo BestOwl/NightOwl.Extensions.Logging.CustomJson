@@ -17,7 +17,7 @@ using Microsoft.Extensions.Options;
  
 namespace NightOwl.Extensions.Logging.CustomJson
 {
-    internal sealed class JsonConsoleFormatter : ConsoleFormatter, IDisposable
+    public sealed class CustomJsonConsoleFormatter : ConsoleFormatter, IDisposable
     {
         private readonly IDisposable? _optionsReloadToken;
  
@@ -31,7 +31,7 @@ namespace NightOwl.Extensions.Logging.CustomJson
             [LogLevel.Critical] = "Critical"
         };
  
-        public JsonConsoleFormatter(IOptionsMonitor<CustomJsonConsoleFormatterOptions> options)
+        public CustomJsonConsoleFormatter(IOptionsMonitor<CustomJsonConsoleFormatterOptions> options)
             : base("CustomJson")
         {
             ReloadLoggerOptions(options.CurrentValue);
