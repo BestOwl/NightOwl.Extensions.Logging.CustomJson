@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NightOwl.Extensions.Logging.CustomJson", "NightOwl.Extensions.Logging.CustomJson.csproj", "{D6AD8583-26FC-43C8-8B7B-B8D8C76D67E8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6AD8583-26FC-43C8-8B7B-B8D8C76D67E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6AD8583-26FC-43C8-8B7B-B8D8C76D67E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6AD8583-26FC-43C8-8B7B-B8D8C76D67E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6AD8583-26FC-43C8-8B7B-B8D8C76D67E8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
