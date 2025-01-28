@@ -9,18 +9,20 @@ A customizable JSON formatter for .NET logging (Microsoft.Extensions.Logging) th
 - Custom log level name mapping
 
 ## Installation
-``` bash
+```bash
 dotnet add package NightOwl.Extensions.Logging.CustomJson
 ```
 
 ## Usage
 
 ### Basic Setup
-``` csharp
+```csharp
+builder.Logging.AddConsoleFormatter<CustomJsonConsoleFormatter, CustomJsonConsoleFormatterOptions>();
 builder.Services.AddLogging(builder =>
 {
-    builder.AddCustomJson(options =>
+    builder.AddJsonConsole(options =>
     {
+        options.FormatterName = "CustomJson";
         options.TimestampFormat = "yyyy-MM-dd HH:mm:ss.fff";
         options.UseUtcTimestamp = true;
     });
@@ -30,11 +32,13 @@ builder.Services.AddLogging(builder =>
 ### Customizing Field Names
 
 You can customize the names of fields in the JSON output:
-``` csharp
+```csharp
+builder.Logging.AddConsoleFormatter<CustomJsonConsoleFormatter, CustomJsonConsoleFormatterOptions>();
 builder.Services.AddLogging(builder =>
 {
-    builder.AddCustomJson(options =>
+    builder.AddJsonConsole(options =>
     {
+        options.FormatterName = "CustomJson";
         options.TimestampFieldName = "time";
         options.LogLevelFieldName = "severity";
         options.MessageFieldName = "msg";
@@ -48,11 +52,13 @@ builder.Services.AddLogging(builder =>
 ### Custom Log Level Names
 
 You can map log levels to custom names:
-``` csharp
+```csharp
+builder.Logging.AddConsoleFormatter<CustomJsonConsoleFormatter, CustomJsonConsoleFormatterOptions>();
 builder.Services.AddLogging(builder =>
 {
-    builder.AddCustomJson(options =>
+    builder.AddJsonConsole(options =>
     {
+        options.FormatterName = "CustomJson";
         options.LogLevelNameMapping = new Dictionary<LogLevel, string>
         {
             [LogLevel.Error] = "err",
@@ -70,7 +76,13 @@ builder.Services.AddLogging(builder =>
 
 You can also configure the formatter using `appsettings.json`:
 
-``` json
+Add the formatter to the logging configuration:
+```csharp
+builder.Logging.AddConsoleFormatter<CustomJsonConsoleFormatter>();
+```
+
+Configure the formatter options in `appsettings.json`:
+```json
 {
     "Logging": {
         "Console": {
