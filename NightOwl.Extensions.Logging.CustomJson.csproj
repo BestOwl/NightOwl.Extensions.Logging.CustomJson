@@ -9,6 +9,7 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageProjectUrl>https://github.com/BestOwl/NightOwl.Extensions.Logging.CustomJson.git</PackageProjectUrl>
     <RepositoryUrl>https://github.com/BestOwl/NightOwl.Extensions.Logging.CustomJson.git</RepositoryUrl>
+    <Version>1.0.1</Version>
   </PropertyGroup>
   
   <ItemGroup>
